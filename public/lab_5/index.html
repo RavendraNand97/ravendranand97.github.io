@@ -78,14 +78,19 @@
              document.querySelector('h1').textContent = 'Lab 5 for Ravendra Nand ';
              document.querySelector('body').style.backgroundColor = "#eb4b4b";
              document.querySelector('ul').style.margin ="0 auto";
+            
+             
+             const checkLabel = document.querySelectorAll(".checkbox-list-label");
+             checkLabel.forEach(p => {
+                 p.textContent= 'Fruits'
+             })
 
-             const checkBox = document.querySelectorAll(".checkbox-list-label")
-             checkBox.forEach((p)=> {
-                p.textContent = 'Fruits'
-                })
-             const listLabel = document.querySelectorAll(".flex-inner");
-             listLabel.forEach((label) =>{
-                 label.textContent = "pear"
+             const fruits = ['orange', 'apple', 'grapes','banana'];
+             const checkBox = document.querySelectorAll('.flex-inner label');
+             console.log(checkBox.length, checkBox[0]);
+             checkBox.forEach((checkBox, i) => {
+                 console.log(checkBox, i);
+                 checkBox.textContent = fruits[i];
              })
             }   
          </script>
