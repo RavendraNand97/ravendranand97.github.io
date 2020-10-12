@@ -23,7 +23,7 @@ app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
     console.log('Form data in req.body', req.body);
-    res.send("Hello World");
+    /*res.send("Hello World");*/
     res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post((req, res) => {
