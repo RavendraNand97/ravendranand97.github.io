@@ -15,85 +15,82 @@
 <div class = "wrapper">
     <body>
         <form action="/api" method="post">
-        <ul class="flex-outer">
-            <li>
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" placeholder="Enter your first name here" maxlength="140">
-            </li>
+            <ul class="flex-outer">
+                <li>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name here" maxlength="140">
+                </li>
 
-            <li>
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" placeholder="Enter your last name here" maxlength="140">
-            </li>
+                <li>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name here" maxlength="140">
+                </li>
 
-            <li>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email here">
-            </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email here">
+                </li>
 
-            <li>
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name= "phone" placeholder="Enter your number here">
-            </li>
+                <li>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name= "phone" placeholder="Enter your number here">
+                </li>
 
-            <li>
-                <label for="message">Message</label>
-                <textarea rows="5" cols="33" id="message" name = "message" placeholder="Enter your message here"></textarea>
-            </li>
-                
-            <li class="checkbox-list-label">
-                <p>Age</p>
-                <ul class="flex-inner">
-                    <li>
-                        <input type="checkbox" id="eighteen-to-thirtyfive" name= "eighteen-to-thirtyfive">
-                        <label for="eighteen-to-thirtyfive">18-35</label>
-                    </li>
-
-                    <li>
-                        <input type="checkbox" id="thirtysix-to-fifty" name="thirtysix-to-fifty">
-                        <label for="thirtysix-to-fifty">36-50</label>
-                    </li>
+                <li>
+                    <label for="message">Message</label>
+                    <textarea rows="5" cols="33" id="message" name = "message" placeholder="Enter your message here"></textarea>
+                </li>
                     
-                    <li>
-                        <input type="checkbox" id="fiftyone-to-sixtyfive" name="fiftyone-to-sixtyfive">
-                        <label for="fiftyone-to-sixtyfive">51-65</label>
-                    </li>
-                </ul>
-            </li>
+                <li class="checkbox-list-label">
+                    <p>Age</p>
+                    <ul class="flex-inner">
+                        <li>
+                            <input type="checkbox" id="eighteen-to-thirtyfive" name= "eighteen-to-thirtyfive">
+                            <label for="eighteen-to-thirtyfive">18-35</label>
+                        </li>
 
-            <li>
-                <button type="submit" id="submit" name = "submit">Submit</button>
-                <button onclick=testFunction() type = "button" id="activate" name="activate">Activate</button>
-            </li>
-        </ul>
-    </form>
-    <script> 
-        function testFunction() {
-            fetch('/api')
-            .then((response) => response.text())
-            .then((response) => {
-                console.log(response);
-            })
-            /*const myHeading = myHeading;  I know I can use these, but tried the single line ver. */
-             document.querySelector('h1').textContent = 'Lab 5 for Ravendra Nand ';
-             document.querySelector('body').style.backgroundColor = "#eb4b4b";
-             document.querySelector('ul').style.margin ="0 auto";
-            
-             
-             const checkLabel = document.querySelectorAll(".checkbox-list-label");
-             checkLabel.forEach(p => {
-                 p.textContent= 'Fruits'
-             })
+                        <li>
+                            <input type="checkbox" id="thirtysix-to-fifty" name="thirtysix-to-fifty">
+                            <label for="thirtysix-to-fifty">36-50</label>
+                        </li>
+                        
+                        <li>
+                            <input type="checkbox" id="fiftyone-to-sixtyfive" name="fiftyone-to-sixtyfive">
+                            <label for="fiftyone-to-sixtyfive">51-65</label>
+                        </li>
+                    </ul>
+                </li>
 
-             const fruits = ['orange', 'apple', 'grapes','banana'];
-             const checkBox = document.querySelectorAll('.flex-inner label');
-             console.log(checkBox.length, checkBox[0]);
-             checkBox.forEach((checkBox, i) => {
-                 console.log(checkBox, i);
-                 checkBox.textContent = fruits[i];
-             })
-            }   
-         </script>
+                <li>
+                    <button type="submit" id="submit" name = "submit">Submit</button>
+                    <button onclick=testFunction() type = "button" id="activate" name="activate">Activate</button>
+                </li>
+            </ul>
+        </form>
+        <script> 
+            function testFunction() {
+                fetch('/api')
+                .then((response) => response.text())
+                .then((response) => {
+                    console.log(response);
+                })
+                /*const myHeading = myHeading;  I know I can use these, but tried the single line ver. */
+                document.querySelector('h1').textContent = 'Lab 5 for Ravendra Nand ';
+                document.querySelector('body').style.backgroundColor = "#eb4b4b";
+                document.querySelector('ul').style.margin ="0 auto";
+                document.querySelector('.flex-outer li p').innerText = "Fruits";
+                
+                const fruits = ['orange', 'apple', 'grapes'];
+
+                const checkBoxs = document.querySelectorAll('.flex-inner label');
+                    console.log(checkBoxs.length, checkBoxs[0]);
+                    checkBoxs.forEach((checkBox, i) => {
+                        console.log(checkBox, i);
+                        checkBox.innerText = fruits[i];
+                    })
+
+                }   
+        </script>
 
     </body>
 </div>
